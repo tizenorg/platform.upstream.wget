@@ -1,0 +1,3 @@
+* Fri Jan 11 2013 Anas Nashif <anas.nashif@intel.com> upstream/1.13.4@69549f4
+- Fix build with missing gets declaration
+
