@@ -6,6 +6,7 @@ License:        GPL-3.0+
 Group:          Productivity/Networking/Web/Utilities
 Url:            http://www.gnu.org/software/wget/
 Source:         %name-%version.tar.bz2
+Source1001: 	wget.manifest
 BuildRequires:  automake
 BuildRequires:  libidn-devel
 BuildRequires:  openssl-devel
@@ -17,6 +18,7 @@ This can be done in script files or via the command line.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --with-ssl=openssl
@@ -29,6 +31,7 @@ make %{?_smp_mflags}
 %lang_package
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %doc doc/sample.wgetrc util/rmold.pl
